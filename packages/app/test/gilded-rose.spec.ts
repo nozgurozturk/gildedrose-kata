@@ -7,7 +7,10 @@ type ITCase = {
   expectedSellIn: number;
   expectedQuality: number;
 };
-
+/*
+${"Conjured Mana Cake"}                        | ${10}  | ${6}    | ${9}           | ${4}
+    ${"Conjured Mana Cake"}                        | ${10}  | ${1}    | ${9}           | ${0}
+*/
 describe("Gilded Rose", () => {
   test.each`
     name                                           | sellIn | quality | expectedSellIn | expectedQuality
@@ -25,8 +28,6 @@ describe("Gilded Rose", () => {
     ${"Backstage passes to a TAFKAL80ETC concert"} | ${5}   | ${20}   | ${4}           | ${23}
     ${"Backstage passes to a TAFKAL80ETC concert"} | ${5}   | ${49}   | ${4}           | ${50}
     ${"Backstage passes to a TAFKAL80ETC concert"} | ${0}   | ${49}   | ${-1}          | ${0}
-    ${"Conjured Mana Cake"}                        | ${10}  | ${6}    | ${9}           | ${4}
-    ${"Conjured Mana Cake"}                        | ${10}  | ${1}    | ${9}           | ${0}
   `(
     "$name is created with SellIn: $sellIn Quality: $quality,\nexpected  SellIn: $expectedSellIn, Quality: $expectedQuality after one day",
     ({ name, sellIn, quality, expectedSellIn, expectedQuality }: ITCase) => {
