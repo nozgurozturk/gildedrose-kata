@@ -2,12 +2,9 @@
   "name": "gildedrose",
   "version": "1.0.0",
   "description": "GildedRose Kata",
-  "main": "index.js",
   "repository": "https://github.com/nozgurozturk/gildedrose-kata.git",
   "author": "n.ozgurozturk <ozgur@nozgurozturk.com>",
   "license": "MIT",
   "private": true,
-  "workspaces": [
-    "/packages/**"
-  ]
+  "workspaces": ["ui", "app"]
 }
