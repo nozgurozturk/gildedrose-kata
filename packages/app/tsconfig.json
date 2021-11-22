@@ -3,6 +3,7 @@
     "module": "commonjs",
     "skipLibCheck": true,
     "declaration": true,
+    "composite": true,
     "removeComments": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
@@ -15,14 +16,9 @@
     "resolveJsonModule": true,
     "isolatedModules": false,
     "strictPropertyInitialization": false,
-    "typeRoots": [
-      "@types",
-      "node_modules/@types"
-    ]
+    "typeRoots": ["@types", "node_modules/@types"]
   },
-  "include": [
-    "src", "test", "@types"
-  ],
+  "include": ["src", "test", "@types"],
   "exclude": [
     "node_modules",
     "./node_modules",

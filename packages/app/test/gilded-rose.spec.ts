@@ -1,4 +1,5 @@
-import { Item, GildedRose } from "../src/gilded-rose";
+import { GildedRose } from "../src/gilded-rose";
+import { Item } from "../src/item";
 
 type ITCase = {
   name: string;
@@ -27,6 +28,7 @@ describe("Gilded Rose", () => {
     ${"Backstage passes to a TAFKAL80ETC concert"} | ${0}   | ${49}   | ${-1}          | ${0}
     ${"Conjured Mana Cake"}                        | ${10}  | ${6}    | ${9}           | ${4}
     ${"Conjured Mana Cake"}                        | ${10}  | ${1}    | ${9}           | ${0}
+    ${"Conjured Mana Cake"}                        | ${-1}  | ${5}    | ${-2}          | ${1}
   `(
     "$name is created with SellIn: $sellIn Quality: $quality,\nexpected  SellIn: $expectedSellIn, Quality: $expectedQuality after one day",
     ({ name, sellIn, quality, expectedSellIn, expectedQuality }: ITCase) => {

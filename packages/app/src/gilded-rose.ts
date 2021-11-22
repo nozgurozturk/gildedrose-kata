@@ -1,23 +1,21 @@
-export class Item {
-  name: string;
-  sellIn: number;
-  quality: number;
-
-  constructor(name: string, sellIn: number, quality: number) {
-    this.name = name;
-    this.sellIn = sellIn;
-    this.quality = quality;
-  }
-}
+import { Item } from "./item";
 
 export class GildedRose {
-  items: Array<Item>;
+  items: Item[];
 
-  constructor(items = [] as Array<Item>) {
+  constructor(items: Item[]) {
     this.items = items;
   }
 
-  updateQuality() {
+  public addItem(item: Item): void {
+    this.items.push(item);
+  }
+
+  public dropItem(item: Item): void {
+    this.items.splice(this.items.indexOf(item), 1);
+  }
+
+  public updateQuality() {
     for (const item of this.items) {
       if (item.name === "Sulfuras, Hand of Ragnaros") {
         continue;
@@ -46,6 +44,10 @@ export class GildedRose {
         case "Conjured Mana Cake":
           this.decreaseQuality(item);
           this.decreaseQuality(item);
+          if (item.sellIn < 0) {
+            this.decreaseQuality(item);
+            this.decreaseQuality(item);
+          }
           break;
         default:
           this.decreaseQuality(item);
@@ -59,13 +61,13 @@ export class GildedRose {
     return this.items;
   }
 
-  decreaseQuality(item: Item): void {
+  private decreaseQuality(item: Item): void {
     if (item.quality > 0) {
       item.quality -= 1;
     }
   }
 
-  increaseQuality(item: Item): void {
+  private increaseQuality(item: Item): void {
     if (item.quality < 50) {
       item.quality += 1;
     }

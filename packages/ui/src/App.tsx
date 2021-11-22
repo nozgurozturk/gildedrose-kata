@@ -1,8 +1,11 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import { GildedRose } from "gildedrose-app";
 
 function App() {
+  const gildedRose = new GildedRose();
+
   return (
     <div className="App">
       <header className="App-header">

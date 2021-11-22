@@ -2,9 +2,13 @@
   "name": "app",
   "version": "1.0.0",
   "description": "Gilded Rose kata in TypeScript",
+  "main": "dist/src/index.js",
+  "module": "dist/src/index.es.js",
+  "types": "dist/src/index.d.ts",
   "scripts": {
-    "precompile": "rimraf src/**/*.js test/**/*.js",
+    "precompile": "rimraf src/**/*.js",
     "compile": "tsc",
+    "build": "tsc --build",
     "pretest": "rimraf src/**/*.js test/**/*.js",
     "test": "jest",
     "test:watch": "jest --watchAll"
