@@ -43,6 +43,10 @@ export class GildedRose {
             item.quality = 0;
           }
           break;
+        case "Conjured Mana Cake":
+          this.decreaseQuality(item);
+          this.decreaseQuality(item);
+          break;
         default:
           this.decreaseQuality(item);
           if (item.sellIn < 0) {
