@@ -6,5 +6,8 @@
   "author": "n.ozgurozturk <ozgur@nozgurozturk.com>",
   "license": "MIT",
   "private": true,
-  "workspaces": ["ui", "app"]
+  "workspaces": [
+    "ui",
+    "app"
+  ]
 }
